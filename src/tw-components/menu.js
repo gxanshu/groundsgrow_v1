@@ -1,4 +1,4 @@
-import { convertFontSizeToCSSvar } from "./utils/typography";
+import { convertFontSizeToCSSVar } from "./utils/typography";
 import {
   MenuGroup as ChakraMenuGroup,
   MenuItem as ChakraMenuItem,
@@ -14,7 +14,7 @@ export const MenuGroup = ({ size = "label.lg", title, ...restProps }) => {
 
   return (
     <ChakraMenuGroup
-      fontSize={convertFontSizeToCSSvar(size)}
+      fontSize={convertFontSizeToCSSVar(size)}
       fontWeight={fontWeights[base]}
       lineHeight={lineHeights[base]}
       letterSpacing={letterSpacings[base]}
@@ -36,7 +36,7 @@ export const MenuItem = forwardRef(({ size, ...restButtonprops }, ref) => {
     fontWeight: fontWeights.subtitle,
     lineHeight: lineHeights.label,
     letterSpacing: letterSpacings.body,
-    fontSize: convertFontSizeToCSSvar(`label.${_size}`),
+    fontSize: convertFontSizeToCSSVar(`label.${_size}`),
     size: _size,
     ...buttonGroupContext,
     ...restButtonprops,

@@ -8,9 +8,8 @@ const chkaraTheme = extendTheme({
     useSystemColorMode: false,
   },
   fonts: {
-    Heading:
-      "GT Walsheim, Helvetica Neue, Helvetica, ubuntu, Arial, sans-serif",
-    body: "GT Walsheim, Helvetica Neue, Helvetica, ubuntu, Arial, sans-serif",
+    heading: `"GT Walsheim", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif`,
+    body: `"GT Walsheim", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif`,
     mono: `'IBM Plex Mono', monospace`,
   },
   styles: {
@@ -53,7 +52,7 @@ const chkaraTheme = extendTheme({
       variants: {
         gradient: (props) => {
           const { theme, fromcolor, tocolor } = props;
-          const lgFrom = getColor(theme, fromColor);
+          const lgFrom = getColor(theme, fromcolor);
           const lgTo = getColor(theme, tocolor);
           const bgColor = getColor(theme, mode("white", "gray.800"));
 
@@ -188,6 +187,7 @@ const chkaraTheme = extendTheme({
       },
     },
   },
+  fontSizes: [],
   fontWeights,
   lineHeights,
   letterSpacings,

@@ -3,9 +3,26 @@ import { ChakraProvider, DarkMode, Flex } from "@chakra-ui/react";
 import "../../styles/globals.css";
 import chakraTheme from "theme";
 import { HomepageTopNav } from "components/navbar";
+import { generateBreakpointTypographyCssVars } from "tw-components/utils/typography";
+import { Global, css } from "@emotion/react";
+
+const fontSizeCssVars = generateBreakpointTypographyCssVars();
 
 function MyApp({ Component, pageProps }) {
   return (
+    <>
+    <Global
+        styles={css`
+          #walletconnect-wrapper {
+            color: #000;
+          }
+          .walletconnect-search__input::placeholder {
+            color: inherit;
+            opacity: 0.7;
+          }
+          ${fontSizeCssVars}
+        `}
+      />
     <ChakraProvider theme={chakraTheme}>
       <DarkMode>
         <Flex
@@ -25,6 +42,7 @@ function MyApp({ Component, pageProps }) {
         </Flex>
       </DarkMode>
     </ChakraProvider>
+    </>
   );
 }
 

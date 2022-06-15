@@ -1,6 +1,6 @@
 import { Card } from "./card";
 import { Text } from "./text";
-import { convertFontSizeToCSSvar } from "./utils/typography";
+import { convertFontSizeToCSSVar } from "./utils/typography";
 import {
   Button as ChakraButton,
   Icon,
@@ -35,7 +35,7 @@ export const Button = forwardRef(({ size, ...restButtonProps }, ref) => {
     fontWeight: fontWeights.label,
     fontHeight: lineHeights.label,
     letterSpacings: letterSpacings.label,
-    fontSize: convertFontSizeToCSSvar(`label.${buttonSizesMap[size]}`),
+    fontSize: convertFontSizeToCSSVar(`label.${buttonSizesMap[size]}`),
     size: _size,
     ...butotnGroupContext,
     ...restButtonProps,
