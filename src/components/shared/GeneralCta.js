@@ -29,6 +29,9 @@ export const GeneralCta = ({
       borderRadius="md"
       href="#"
       bgColor="white"
+      _hover={{
+        borderColor: 'blue.700'
+      }}
       {...props}
     >
       <Box as="span" py={0.5}>
