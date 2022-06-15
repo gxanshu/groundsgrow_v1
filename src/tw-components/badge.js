@@ -16,13 +16,13 @@ export const Badge = forwardRef(
     }
 
     return (
-        <ChakraBadge py={py} {...props} ref={ref}>
-            <Text color='inherit' size={size}>
-                {children}
-            </Text>
-        </ChakraBadge>
-    )
+      <ChakraBadge py={py} {...props} ref={ref}>
+        <Text color="inherit" size={size}>
+          {children}
+        </Text>
+      </ChakraBadge>
+    );
   },
 );
 
-Badge.displayName = "Badge"
+Badge.displayName = "Badge";

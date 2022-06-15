@@ -96,12 +96,7 @@ LinkButton.displayName = "LinkButton";
 
 export const CustomIconButton = forwardRef(
   ({ category, label, ...restButtonProps }, ref) => {
-    return (
-      <IconButton
-        ref={ref}
-        {...restButtonProps}
-      />
-    );
+    return <IconButton ref={ref} {...restButtonProps} />;
   },
 );
 
