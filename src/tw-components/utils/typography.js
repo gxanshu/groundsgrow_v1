@@ -1,8 +1,5 @@
 import chakraTheme from "theme";
-import {
-  baseFontSizes,
-  mdFontSizes,
-} from "theme/typography";
+import { baseFontSizes, mdFontSizes } from "theme/typography";
 
 const FONT_SIZE_CSS_VAR_PREFIX = "--tw-font-size-";
 
@@ -20,9 +17,7 @@ export function generateBreakpointTypographyCssVars() {
       return Object.entries(typographySizeMap).map(
         ([typographySize, fontSizeValue]) => {
           return `${createCssVariable(
-            `${typographyBase}.${
-              typographySize
-            }`,
+            `${typographyBase}.${typographySize}`,
           )}: ${fontSizeValue};`;
         },
       );
@@ -34,9 +29,7 @@ export function generateBreakpointTypographyCssVars() {
       return Object.entries(typographySizeMap).map(
         ([typographySize, fontSizeValue]) => {
           return `${createCssVariable(
-            `${typographyBase}.${
-              typographySize
-            }`,
+            `${typographyBase}.${typographySize}`,
           )}: ${fontSizeValue};`;
         },
       );

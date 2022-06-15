@@ -33,8 +33,8 @@ export const Button = forwardRef(({ size, ...restButtonProps }, ref) => {
 
   const props = {
     fontWeight: fontWeights.label,
-    fontHeight: lineHeights.label,
-    letterSpacings: letterSpacings.label,
+    lineHeight: lineHeights.label,
+    letterSpacing: letterSpacings.label,
     fontSize: convertFontSizeToCSSVar(`label.${buttonSizesMap[size]}`),
     size: _size,
     ...butotnGroupContext,

@@ -54,18 +54,13 @@ const EXAMPLES_MAP = {
   },
 };
 
-export const exampleCategories = Object.keys(EXAMPLES_MAP)
-export const ExampleItem = ({
-  category,
-}) => {
+export const exampleCategories = Object.keys(EXAMPLES_MAP);
+export const ExampleItem = ({ category }) => {
   const { title, href, svg: RenderSVG } = EXAMPLES_MAP[category];
   return (
     <Flex as={LinkBox} role="group" flexDir="column" gap={6} flexGrow={0}>
       <RenderSVG />
-      <LinkOverlay
-        href={href}
-        isExternal
-      >
+      <LinkOverlay href={href} isExternal>
         <Heading
           _groupHover={{ textDecor: "underline" }}
           textAlign="center"

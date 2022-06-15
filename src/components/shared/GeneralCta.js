@@ -7,7 +7,6 @@ export const GeneralCta = ({
   title = "Start building",
   ...props
 }) => {
-
   return (
     <LinkButton
       role="group"
@@ -30,7 +29,7 @@ export const GeneralCta = ({
       href="#"
       bgColor="white"
       _hover={{
-        borderColor: 'blue.700'
+        borderColor: "blue.700",
       }}
       {...props}
     >

@@ -50,7 +50,7 @@ export const ChakraNextImage = (props) => {
   const size =
     sizes ||
     (isBrowser() && _width !== undefined
-      ? `${(_width / window.innerWidth) * 100}vw`
+      ? `${(_width / innerWidth) * 100}vw`
       : "100vw");
   return (
     <Box maxW="100%" pos="relative" {...rest} ref={observe}>

@@ -1,17 +1,8 @@
 import { convertFontSizeToCSSVar } from "./utils/typography";
-import {
-  Heading as ChakraHeading,
-} from "@chakra-ui/react";
-import {
-  fontWeights,
-  letterSpacings,
-  lineHeights,
-} from "theme/typography";
+import { Heading as ChakraHeading } from "@chakra-ui/react";
+import { fontWeights, letterSpacings, lineHeights } from "theme/typography";
 
-export const Heading = ({
-  size = "title.lg",
-  ...restProps
-}) => {
+export const Heading = ({ size = "title.lg", ...restProps }) => {
   const [base] = size.split(".");
 
   return (

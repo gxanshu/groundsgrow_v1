@@ -125,16 +125,16 @@ export const LazyLoadedImage = ({ url, aspectRatioProps, ...imageProps }) => {
 
   return (
     <>
-    <AspectRatio {...aspectRatioProps} ref={containerRef}>
-      {lockRef.current ? (
-        <ChakraNextImage {...imageProps} />
-      ) : (
-        <Center>
-          <Spinner color="white" />
-        </Center>
-      )}
-    </AspectRatio>
-    <LinkButton
+      <AspectRatio {...aspectRatioProps} ref={containerRef}>
+        {lockRef.current ? (
+          <ChakraNextImage {...imageProps} />
+        ) : (
+          <Center>
+            <Spinner color="white" />
+          </Center>
+        )}
+      </AspectRatio>
+      <LinkButton
         variant="outline"
         borderRadius="md"
         bg="#fff"

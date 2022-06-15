@@ -3,11 +3,7 @@ import { ChakraNextImage } from "./Image";
 import React from "react";
 import { Heading, Text } from "tw-components";
 
-export const ContractCard = ({
-  icon,
-  title,
-  description,
-}) => {
+export const ContractCard = ({ icon, title, description }) => {
   return (
     <Flex
       as={LinkBox}
