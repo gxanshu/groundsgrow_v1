@@ -94,7 +94,7 @@ export const LinkButton = forwardRef(
 
 LinkButton.displayName = "LinkButton";
 
-export const IconButton = forwardRef(
+export const CustomIconButton = forwardRef(
   ({ category, label, ...restButtonProps }, ref) => {
     return (
       <IconButton
@@ -105,4 +105,4 @@ export const IconButton = forwardRef(
   },
 );
 
-IconButton.displayName = "IconButton";
+CustomIconButton.displayName = "CustomIconButton";

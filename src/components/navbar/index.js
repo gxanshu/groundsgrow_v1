@@ -5,12 +5,13 @@ import {
   Flex,
   Icon,
   Stack,
+  Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import { useState } from "react";
 import { SiDiscord, SiGithub, SiTwitter, SiYoutube } from "react-icons/si";
-import { IconButton, LinkButton } from "tw-components";
+import { CustomIconButton, LinkButton } from "tw-components";
 import NextLink from "next/link";
 
 export const HomepageTopNav = () => {
@@ -54,6 +55,7 @@ export const HomepageTopNav = () => {
         >
           <NextLink href="/" category="topnav" label="home">
             {/* <Logo color="#fff" /> */}
+            <Text>groundsgrow</Text>
           </NextLink>
           <Stack
             display={["none", "none", "flex"]}
@@ -78,7 +80,7 @@ export const HomepageTopNav = () => {
               direction="row"
               align="center"
             >
-              <IconButton
+              <CustomIconButton
                 as={LinkButton}
                 isExternal
                 noIcon
@@ -90,7 +92,7 @@ export const HomepageTopNav = () => {
                 category="topnav"
                 label="twitter"
               />
-              <IconButton
+              <CustomIconButton
                 as={LinkButton}
                 isExternal
                 noIcon
@@ -102,7 +104,7 @@ export const HomepageTopNav = () => {
                 category="topnav"
                 label="discord"
               />
-              <IconButton
+              <CustomIconButton
                 as={LinkButton}
                 isExternal
                 noIcon
@@ -114,7 +116,7 @@ export const HomepageTopNav = () => {
                 category="topnav"
                 label="youtube"
               />
-              <IconButton
+              <CustomIconButton
                 as={LinkButton}
                 isExternal
                 noIcon

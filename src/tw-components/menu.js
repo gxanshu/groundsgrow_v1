@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 
 import { fontWeights, letterSpacings, lineHeights } from "theme/typography";
+import { buttonSizesMap } from "./button";
 
 export const MenuGroup = ({ size = "label.lg", title, ...restProps }) => {
   const [base] = size.split(".");
