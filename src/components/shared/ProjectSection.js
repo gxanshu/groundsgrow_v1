@@ -1,35 +1,31 @@
 import {
   AspectRatio,
-  Box,
   Center,
-  Flex,
-  Icon,
   SimpleGrid,
   Spinner,
-  chakra,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import useIntersectionObserver from "@react-hook/intersection-observer";
 import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
-import {
-  Button,
-  LinkButton,
-} from "tw-components";
+import { Button, LinkButton } from "tw-components";
+import { ChakraNextImage } from "./Image";
 
-const isReplitEnabled = true;
+const buildProjects = [
+  "codenanshu.in",
+  "theperfumeyard.com",
+  "google.com",
+  "twitter.com",
+];
 
-const SiteOptionButton = ({
+const ProjectOptionButton = ({
   children,
-  domain,
-  setActiveDomain,
-  activeDomain,
+  projectName,
+  setActiveProject,
+  activeProject,
   ...rest
 }) => {
-  const size = useBreakpointValue(
-    { base: "sm", md: "md" },
-    "md",
-  )
+  const size = useBreakpointValue({ base: "sm", md: "md" }, "md");
 
   return (
     <Button
@@ -39,26 +35,28 @@ const SiteOptionButton = ({
       bg="#1E1E24"
       borderWidth="1px"
       size={size}
-      borderColor="#0098EE"
+      borderColor={
+        projectName === activeProject ? "#0098EE" : "rgba(255, 255, 255, 0.1)"
+      }
       _hover={{ borderColor: "#0098EE" }}
       _active={{
-        borderColor: "#0098EE"
+        borderColor: projectName === activeProject ? "#0098EE" : undefined,
       }}
-      {...rest}
       onClick={() => {
         flushSync(() => {
-          setActiveDomain(domain);
+          setActiveProject(projectName);
         });
       }}
+      {...rest}
     >
       {children}
     </Button>
   );
 };
 
-export const CodeSelector = () => {
-  const [activeDomain, setActiveDomain] =
-    useState("codenanshu.in");
+export const ProjectSelector = () => {
+  const [activeProject, setActiveProject] = useState(buildProjects[0]);
+
   return (
     <>
       <SimpleGrid
@@ -66,87 +64,77 @@ export const CodeSelector = () => {
         columns={{ base: 2, md: 4 }}
         justifyContent={{ base: "space-between", md: "center" }}
       >
-        <SiteOptionButton
-          setActiveDomain={setActiveDomain}
-          activeDomain={activeDomain}
-          domain="google.com"
+        <ProjectOptionButton
+          setActiveProject={setActiveProject}
+          activeProject={activeProject}
+          projectName={buildProjects[0]}
         >
           codenanshu
-        </SiteOptionButton>
-        <SiteOptionButton
-          setActiveDomain={setActiveDomain}
-          activeDomain={activeDomain}
-          domain="theperfumeyard.com"
+        </ProjectOptionButton>
+        <ProjectOptionButton
+          setActiveProject={setActiveProject}
+          activeProject={activeProject}
+          projectName={buildProjects[1]}
         >
           perfumeyard
-        </SiteOptionButton>
-        <SiteOptionButton
-          setActiveDomain={setActiveDomain}
-          activeDomain={activeDomain}
-          domain="google.com"
+        </ProjectOptionButton>
+        <ProjectOptionButton
+          setActiveProject={setActiveProject}
+          activeProject={activeProject}
+          projectName={buildProjects[2]}
         >
-          Google
-        </SiteOptionButton>
-        <SiteOptionButton
-          setActiveDomain={setActiveDomain}
-          activeDomain={activeDomain}
-          domain="instagram.com"
+          google
+        </ProjectOptionButton>
+        <ProjectOptionButton
+          setActiveProject={setActiveProject}
+          activeProject={activeProject}
+          projectName={buildProjects[3]}
         >
-          instagram
-        </SiteOptionButton>
+          twitter
+        </ProjectOptionButton>
       </SimpleGrid>
-      {isReplitEnabled ? (
-        <LazyLoadedIframe
-          aspectRatioProps={{
-            ratio: { base: 9 / 16, md: 16 / 9 },
-            w: "full",
-            borderRadius: "xl",
-            overflow: "hidden",
-            border: "2px solid",
-            borderColor: "#4953AF",
-            bg: "#1C2333",
-          }}
-          frameBorder="0"
-          width="1200px"
-          height="800px"
-          loading="lazy"
-          src={`https://${activeDomain}`}
-        />
+      <LazyLoadedImage
+        aspectRatioProps={{
+          ratio: { base: 16 / 9, md: 16 / 9 },
+          w: "full",
+          borderRadius: "xl",
+          overflow: "hidden",
+          border: "2px solid",
+          borderColor: "#4953AF",
+          bg: "#1C2333",
+        }}
+        frameBorder="0"
+        width="1200px"
+        height="800px"
+        layout="fill"
+        loading="lazy"
+        src={`/assets/projects/${activeProject}.png`}
+        url={activeProject}
+      />
+    </>
+  );
+};
+
+export const LazyLoadedImage = ({ url, aspectRatioProps, ...imageProps }) => {
+  const containerRef = useRef(null);
+  const lockRef = useRef(false);
+  const { isIntersecting } = useIntersectionObserver(containerRef);
+  if (isIntersecting) {
+    lockRef.current = true;
+  }
+
+  return (
+    <>
+    <AspectRatio {...aspectRatioProps} ref={containerRef}>
+      {lockRef.current ? (
+        <ChakraNextImage {...imageProps} />
       ) : (
-        <Flex
-          gap={{ base: 4, md: 12 }}
-          align="center"
-          direction={{ base: "column", md: "row" }}
-          w="100%"
-          maxW="container.sm"
-        >
-          <LinkButton
-            role="group"
-            borderRadius="md"
-            p={6}
-            variant="gradient"
-            fromcolor="#1D64EF"
-            tocolor="#E0507A"
-            // flexShrink={0}
-            isExternal
-            // variant="solid"
-            colorScheme="primary"
-            w="full"
-            // maxW="300px"
-            href={`https://codenanshu.in`}
-            leftIcon={
-              <Icon
-                color="#1D64EF"
-                _groupHover={{ color: "#E0507A" }}
-                as={SiReplit}
-              />
-            }
-          >
-            <Box as="span">Try it on repl.it</Box>
-          </LinkButton>
-        </Flex>
+        <Center>
+          <Spinner color="white" />
+        </Center>
       )}
-      <LinkButton
+    </AspectRatio>
+    <LinkButton
         variant="outline"
         borderRadius="md"
         bg="#fff"
@@ -156,37 +144,13 @@ export const CodeSelector = () => {
         _hover={{
           bg: "whiteAlpha.800",
         }}
-        href="https://portal.thirdweb.com/"
+        href={`https://${url}`}
         isExternal
         p={6}
+        rightIcon
       >
-        Explore documentation
+        Live demonstration
       </LinkButton>
     </>
-  );
-};
-
-const ChakraIframe = chakra("iframe");
-
-export const LazyLoadedIframe = ({
-  aspectRatioProps,
-  ...iframeProps
-}) => {
-  const containerRef = useRef(null);
-  const lockRef = useRef(false);
-  const { isIntersecting } = useIntersectionObserver(containerRef);
-  if (isIntersecting) {
-    lockRef.current = true;
-  }
-  return (
-    <AspectRatio {...aspectRatioProps} ref={containerRef}>
-      {lockRef.current ? (
-        <ChakraIframe {...iframeProps} />
-      ) : (
-        <Center>
-          <Spinner color="heading" />
-        </Center>
-      )}
-    </AspectRatio>
   );
 };

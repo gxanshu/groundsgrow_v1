@@ -6,7 +6,7 @@ import { ChakraNextImage } from "components/shared/Image";
 import Hero from "../../public/landingpage/hero.png";
 import MobileHero from "../../public/landingpage/mobile-hero.png";
 import { ContractCard } from "components/shared/ContractCard";
-import { CodeSelector } from 'components/shared/ProjectSection'
+import { ProjectSelector } from 'components/shared/ProjectSection'
 
 export default function Home() {
   return (
@@ -181,7 +181,7 @@ export default function Home() {
               />
               <ContractCard
                 icon="token"
-                title="S.E.O"
+                title="S.E.O improvement"
                 description="ERC20 tokens, minted or lazy minted so your audience can claim them."
               />
               <ContractCard
@@ -212,11 +212,13 @@ export default function Home() {
             Latest Projects.
           </Heading>
           <Heading as="h3" size="subtitle.md" textAlign="center">
-            Easily integrate into web, mobile, backend, games, etc.
+            here our some of the cool projects that we created and deployed
           </Heading>
-          <CodeSelector />
+          <ProjectSelector />
         </Flex>
       </HomepageSection>
+
+    
     </>
   );
 }
