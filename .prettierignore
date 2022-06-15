@@ -11,3 +11,4 @@ typechain/
 publc/
 # files
 coverage.json
+yarn.lock
