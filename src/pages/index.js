@@ -1,4 +1,4 @@
-import { SimpleGrid, Flex, LightMode, Stack } from "@chakra-ui/react";
+import { SimpleGrid, Flex, LightMode, Stack, Box, Center, List, ListItem, ListIcon } from "@chakra-ui/react";
 import { HomepageSection } from "components/HomeSection";
 import { GeneralCta } from "components/shared/GeneralCta";
 import { Heading, Link, Text } from "tw-components";
@@ -7,6 +7,9 @@ import Hero from "../../public/landingpage/hero.png";
 import MobileHero from "../../public/landingpage/mobile-hero.png";
 import { ContractCard } from "components/shared/ContractCard";
 import { ProjectSelector } from 'components/shared/ProjectSection'
+import { FiCheck } from "react-icons/fi";
+import { ExamplesSection } from "components/shared/ExampleSection";
+import WhiteLogo from '../../public/logo.png'
 
 export default function Home() {
   return (
@@ -218,7 +221,149 @@ export default function Home() {
         </Flex>
       </HomepageSection>
 
-    
+      <HomepageSection id="fees">
+            <SimpleGrid
+              py={{ base: 12, lg: 24 }}
+              columns={{ base: 1, lg: 2 }}
+              spacing={{ base: 6, md: 8 }}
+              alignItems="center"
+            >
+              <Flex gap={{ base: 6, md: 8 }} flexDir="column">
+                <Heading
+                  size="display.sm"
+                  textAlign={{ base: "center", md: "left" }}
+                >
+                  Transparent pricing. No hidden fees.
+                  <br />
+                </Heading>
+                <Text
+                  size="body.xl"
+                  fontStyle="italic"
+                  textAlign={{ base: "center", md: "left" }}
+                >
+                  We may introduce optional advanced features which you can
+                  decide to pay for in the future. We will always be transparent
+                  and clear about any paid features up front.
+                </Text>
+              </Flex>
+              <Box
+                border=".5px solid"
+                borderColor="#4953AF"
+                p={12}
+                borderRadius="lg"
+                backgroundColor="#0000004d"
+              >
+                <Heading
+                  bgGradient="linear(to-r, #FFB8E6, #8689E3)"
+                  bgClip="text"
+                  size="display.lg"
+                  mb={6}
+                >
+                  Free.
+                </Heading>
+                <List
+                  spacing={3}
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="start"
+                  textAlign="left"
+                  color="gray.400"
+                  mb={16}
+                >
+                  <ListItem>
+                    <ListIcon as={FiCheck} color="green.500" />
+                    Zero fees on contract deployments
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon as={FiCheck} color="green.500" />
+                    Zero fees on transactions
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon as={FiCheck} color="green.500" />
+                    New features added every week
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon as={FiCheck} color="green.500" />
+                    Save on gas fees with advanced optimizations
+                  </ListItem>
+                </List>
+                <LightMode>
+                  <GeneralCta title="Start building today" size="lg" w="100%" />
+                </LightMode>
+              </Box>
+            </SimpleGrid>
+          </HomepageSection>
+
+          <HomepageSection id="examples" middleGradient>
+            <Flex
+              flexDir="column"
+              py={{ base: 12, lg: 24 }}
+              align="center"
+              gap={{ base: 12, lg: 24 }}
+            >
+              <Heading
+                as="h2"
+                bgGradient="linear(to-r, #907EFF, #C5D8FF)"
+                bgClip="text"
+                size="display.md"
+                textAlign="center"
+              >
+                Build anything.
+              </Heading>
+              <ExamplesSection />
+            </Flex>
+          </HomepageSection>
+          <HomepageSection id="get-started" bottomPattern>
+            <Flex
+              flexDir="column"
+              pt={{ base: 12, lg: 24 }}
+              pb={{ base: 24, lg: 0 }}
+              align="center"
+              gap={{ base: 6, md: 8 }}
+            >
+              <Center mb={6} pt={{ base: 8, lg: 24 }}>
+                <Center p={2} position="relative" mb={6}>
+                  <Box
+                    position="absolute"
+                    bgGradient="linear(to-r, #F213A4, #040BBF)"
+                    top={0}
+                    left={0}
+                    bottom={0}
+                    right={0}
+                    borderRadius="3xl"
+                    overflow="visible"
+                    filter="blur(15px)"
+                  />
+
+                  <ChakraNextImage
+                    alt=""
+                    boxSize={{ base: 24, md: 32 }}
+                    placeholder="empty"
+                    src={WhiteLogo}
+                  />
+                </Center>
+              </Center>
+              <Heading as="h2" size="display.md" textAlign="center">
+                Get started with Groundsgrow
+              </Heading>
+              <Heading
+                as="h3"
+                maxW="600px"
+                textAlign="center"
+                size="subtitle.lg"
+              >
+                lets grow your business from the ground.
+              </Heading>
+              <LightMode>
+                <GeneralCta
+                  title="Contact us"
+                  size="lg"
+                  w={{ base: "full", md: "inherit" }}
+                />
+              </LightMode>
+            </Flex>
+          </HomepageSection>
+
     </>
   );
 }
