@@ -1,4 +1,4 @@
-import { pxToRem } from "utils/pxFunctions";
+import { pxToRem } from "../utils/pxFunctions";
 
 export const baseFontSizes = {
   display: {
@@ -75,6 +75,7 @@ export const mdFontSizes = {
     "2xl": pxToRem(24),
   },
 };
+
 export const fontWeights = {
   display: 800,
   title: 700,
