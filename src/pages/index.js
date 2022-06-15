@@ -6,6 +6,7 @@ import { ChakraNextImage } from "components/shared/Image";
 import Hero from "../../public/landingpage/hero.png";
 import MobileHero from "../../public/landingpage/mobile-hero.png";
 import { ContractCard } from "components/shared/ContractCard";
+import { CodeSelector } from 'components/shared/ProjectSection'
 
 export default function Home() {
   return (
@@ -144,7 +145,9 @@ export default function Home() {
                 />
                 <Heading size="title.sm">Marketing</Heading>
                 <Text size="body.lg">
-                  We porvide the best Marketing tools and services to market your product or services online with social media and in other ways also.
+                  We porvide the best Marketing tools and services to market
+                  your product or services online with social media and in other
+                  ways also.
                 </Text>
               </Stack>
 
@@ -157,7 +160,9 @@ export default function Home() {
                 />
                 <Heading size="title.sm">Development</Heading>
                 <Text size="body.lg">
-                  We build your fully featured product with latest technologies which provides reliability and scalability at the same time to the end user. 
+                  We build your fully featured product with latest technologies
+                  which provides reliability and scalability at the same time to
+                  the end user.
                 </Text>
               </Stack>
             </SimpleGrid>
@@ -195,6 +200,23 @@ export default function Home() {
       </HomepageSection>
 
       {/* section for some related projects */}
+
+      <HomepageSection id="developers" bottomPattern middleGradient>
+        <Flex
+          flexDir="column"
+          pt={{ base: 12, lg: 24 }}
+          align="center"
+          gap={{ base: 6, md: 8 }}
+        >
+          <Heading as="h2" size="display.sm" textAlign="center">
+            Latest Projects.
+          </Heading>
+          <Heading as="h3" size="subtitle.md" textAlign="center">
+            Easily integrate into web, mobile, backend, games, etc.
+          </Heading>
+          <CodeSelector />
+        </Flex>
+      </HomepageSection>
     </>
   );
 }
