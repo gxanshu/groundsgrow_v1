@@ -1,5 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 import { getColor, mode } from "@chakra-ui/theme-tools";
+import { fontWeights, letterSpacings, lineHeights } from "./typography";
 
 const chkaraTheme = extendTheme({
   config: {
@@ -187,6 +188,9 @@ const chkaraTheme = extendTheme({
       },
     },
   },
+  fontWeights,
+  lineHeights,
+  letterSpacings,
   sizes: {
     container: {
       page: "1170px",
