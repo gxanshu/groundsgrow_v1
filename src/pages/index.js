@@ -15,11 +15,11 @@ import { Heading, Link, Text } from "tw-components";
 import { ChakraNextImage } from "components/shared/Image";
 import Hero from "../../public/landingpage/hero.png";
 import MobileHero from "../../public/landingpage/mobile-hero.png";
-// import { ContractCard } from "components/shared/ContractCard";
-// import { ProjectSelector } from "components/shared/ProjectSection";
-// import { FiCheck } from "react-icons/fi";
-// import { ExamplesSection } from "components/shared/ExampleSection";
-// import WhiteLogo from "../../public/logo.png";
+import { ContractCard } from "components/shared/ContractCard";
+import { ProjectSelector } from "components/shared/ProjectSection";
+import { FiCheck } from "react-icons/fi";
+import { ExamplesSection } from "components/shared/ExampleSection";
+import WhiteLogo from "../../public/logo.png";
 
 export default function Home() {
   return (
@@ -110,16 +110,15 @@ export default function Home() {
             flexDir="column"
             gap={{ base: 6, md: 8 }}
           >
-            <Heading textAlign="center" size="display.sm" as="h2">
-              <Heading
-                as="h2"
-                bgGradient="linear(to-r, #B8EEFF, #8689E3)"
-                bgClip="text"
-                size="display.sm"
-                _hover={{ opacity: 0.8 }}
-              >
-                Why We ?
-              </Heading>
+            <Heading
+              bgGradient="linear(to-r, #B8EEFF, #8689E3)"
+              bgClip="text"
+              _hover={{ opacity: 0.8 }}
+              textAlign="center"
+              size="display.sm"
+              as="h2"
+            >
+              Why We ?
             </Heading>
             <Heading size="subtitle.md" as="p" textAlign="center">
               We offer services and strategy that grows authority within your
