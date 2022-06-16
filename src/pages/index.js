@@ -242,7 +242,7 @@ export default function Home() {
               size="display.sm"
               textAlign={{ base: "center", md: "left" }}
             >
-              Transparent pricing. No hidden fees.
+              Complete tech solutions.
               <br />
             </Heading>
             <Text
@@ -250,9 +250,7 @@ export default function Home() {
               fontStyle="italic"
               textAlign={{ base: "center", md: "left" }}
             >
-              We may introduce optional advanced features which you can decide
-              to pay for in the future. We will always be transparent and clear
-              about any paid features up front.
+              our services helps your business to grow on internet get more traffic and sales, we porvide everything from web development to marketing all services that you require for you busienss.
             </Text>
           </Flex>
           <Box
@@ -268,7 +266,7 @@ export default function Home() {
               size="display.lg"
               mb={6}
             >
-              Free.
+              Here.
             </Heading>
             <List
               spacing={3}
@@ -281,19 +279,19 @@ export default function Home() {
             >
               <ListItem>
                 <ListIcon as={FiCheck} color="green.500" />
-                Zero fees on contract deployments
+                search engine optimizations
               </ListItem>
               <ListItem>
                 <ListIcon as={FiCheck} color="green.500" />
-                Zero fees on transactions
+                Web development
               </ListItem>
               <ListItem>
                 <ListIcon as={FiCheck} color="green.500" />
-                New features added every week
+                digital marketing
               </ListItem>
               <ListItem>
                 <ListIcon as={FiCheck} color="green.500" />
-                Save on gas fees with advanced optimizations
+                branding
               </ListItem>
             </List>
             <LightMode>

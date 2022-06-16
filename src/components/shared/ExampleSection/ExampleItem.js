@@ -13,42 +13,42 @@ import { Heading } from "tw-components";
 
 const EXAMPLES_MAP = {
   nftDrops: {
-    title: "NFT drops",
+    title: "Wev Development",
     href: "https://github.com/thirdweb-example/custom-minting-page",
     svg: NFTDrops,
   },
   marketplaces: {
-    title: "NFT marketplaces",
+    title: "S.E.O",
     href: "https://github.com/thirdweb-example/marketplace-next-ts",
     svg: Marketplaces,
   },
   tokenGated: {
-    title: "Token-gated memberships",
+    title: "Digital Marketing",
     href: "https://github.com/thirdweb-example/NFT-Gated-Website",
     svg: TokenGated,
   },
   daos: {
-    title: "DAOs",
+    title: "App Development",
     href: "https://github.com/thirdweb-example/dao",
     svg: DAOs,
   },
   creatorTools: {
-    title: "Creator tools",
+    title: "software devlopment",
     href: "https://portal.thirdweb.com/examples",
     svg: CreatorTools,
   },
   communityRewards: {
-    title: "Community rewards",
+    title: "ecommerce solutions",
     href: "https://github.com/thirdweb-example/community-rewards",
     svg: CommunityRewards,
   },
   playToEarnGames: {
-    title: "Play-to-earn games",
+    title: "MERN stack",
     href: "https://portal.thirdweb.com/examples",
     svg: PlayToEarnGames,
   },
   defiProtocols: {
-    title: "DeFi protocols",
+    title: "cloud computing",
     href: "https://portal.thirdweb.com/examples",
     svg: DefiProtocols,
   },

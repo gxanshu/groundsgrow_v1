@@ -13,6 +13,7 @@ import { useState } from "react";
 import { SiDiscord, SiGithub, SiTwitter, SiYoutube } from "react-icons/si";
 import { CustomIconButton, LinkButton } from "tw-components";
 import NextLink from "next/link";
+import { Logo } from "components/logo";
 
 export const HomepageTopNav = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
@@ -54,8 +55,8 @@ export const HomepageTopNav = () => {
           flexDir="row"
         >
           <NextLink href="/" category="topnav" label="home">
-            {/* <Logo color="#fff" /> */}
-            <Text>groundsgrow</Text>
+            <Logo color="#fff" />
+            {/* <Text>groundsgrow</Text> */}
           </NextLink>
           <Stack
             display={["none", "none", "flex"]}
